@@ -13,7 +13,7 @@ ENV AWS_SECRET_ACCESS_KEY="replace"
 ENV AWS_DEFAULT_REGION="us-west-2"
 ENV PROJECT_NAME="docker-run-ec2"
 RUN mkdir /aws
-COPY aws-create-instance.sh /aws
-COPY aws-delete-instance.sh /aws
-COPY ssh-docker-run.sh /aws
 WORKDIR /aws
+COPY ./aws-create-instance.sh /aws
+COPY ./aws-delete-instance.sh /aws
+COPY ./ssh-docker-run.sh /aws
