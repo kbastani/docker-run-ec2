@@ -14,6 +14,4 @@ ENV AWS_DEFAULT_REGION="us-west-2"
 ENV PROJECT_NAME="docker-run-ec2"
 RUN mkdir /aws
 WORKDIR /aws
-COPY ./aws-create-instance.sh /aws
-COPY ./aws-delete-instance.sh /aws
-COPY ./ssh-docker-run.sh /aws
+COPY scripts /aws
