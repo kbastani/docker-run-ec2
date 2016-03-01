@@ -32,7 +32,7 @@ aws ec2 authorize-security-group-ingress --group-name $PROJECT_NAME --ip-permiss
 
 # launch instance with ubuntu AMI for us-west-2
 # there are assumptions here, about the default region you have set and the instance type you're launching. To whit: not all instance types can be used with all AMIs, and AMIs are region-specific.
-aws ec2 run-instances --image-id ami-f0091d91 --key-name $PROJECT_NAME --instance-type t2.micro --block-device-mappings "[{\"DeviceName\":\"/dev/xvda\",\"Ebs\":{\"VolumeSize\":80,\"DeleteOnTermination\":true}}]" --security-groups $PROJECT_NAME
+aws ec2 run-instances --image-id ami-f0091d91 --key-name $PROJECT_NAME --instance-type "$EC2_INSTANCE_TYPE" --block-device-mappings "[{\"DeviceName\":\"/dev/xvda\",\"Ebs\":{\"VolumeSize\":80,\"DeleteOnTermination\":true}}]" --security-groups $PROJECT_NAME
 
 # get public IP of instance when it has one
 #
